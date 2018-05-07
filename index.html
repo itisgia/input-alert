@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Survey</title>
+    <link href="https://fonts.googleapis.com/css?family=Yeon+Sung" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gidugu" rel="stylesheet">
+  </head>
+  <style media="screen">
+  *{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+  }
+    body{
+      background-color: #97a9c6;
+    }
+    .box{
+      margin-top: 50px;
+      border: 2px solid black;
+      width:40%;
+      padding-bottom: 40px;
+    }
+    img{
+      width: 300px;
+      display: block;
+      text-align: center;
+      margin-top: 100px;
+    }
+    h1{
+      margin-top: 50px;
+      text-align: center;
+      font-family: 'Yeon Sung', cursive;
+    }
+    input{
+      width: 200px;
+      display: block;
+      text-align: center;
+      margin-top: 40px;
+    }
+    p{
+      display: block;
+      text-align: center;
+      font-size: 2em;
+      margin-top: 15px;
+    }
+#demo{
+  font-family: 'Gidugu', sans-serif;
+}
+  </style>
+  <body id="nameit">
+    <div class="box">
+        <p id="demo"></p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/2000px-Flag_of_New_Zealand.svg.png" alt="Flag_of_New_Zealand">
+        <h1>What is  the capital of Newzealand?</h1>
+        <input type="text" name="" value="" id="content">
+        <p id="answer"></p>
+        <input type="submit" value="Submit" id="subButton">
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js">
+    </script>
+    <script type="text/javascript">
+  //
+  // var insideContent = document.getElementById('content')
+  //  function subButton () {
+  //    console.dir(content);
+  //    console.log ('worked');
+  //  //   if(insideContent.value === 'welllington'){
+  //  //     console.log('congrates');
+  //  //     alert('excellernt');
+  //  //   }else{
+  //  //     console.log('shame');
+  //  //     alert('try again');
+  //  //   }
+  //   }
+  //  subButton();
+  $(document).ready(function(){
+    $('#subButton').click(function(){
+      var insideContent = document.getElementById('content')
+      var extraP = document.getElementById('answer')
+      console.log('worked');
+      console.dir(insideContent);
+      if(insideContent.value === 'wellington'){
+           console.log('congrates');
+           alert('excellernt');
+           extraP.innerHTML = 'YES! You\'re correct';
+         }else{
+           console.log('shame');
+           alert('try again');
+           extraP.innerHTML = 'Please Try Again!';
+         }
+    });//click functuon ends here
+  });
+  function nameit() {
+    var person = prompt("Please enter your name", "");
+if (person != null) {
+    document.getElementById("demo").innerHTML =
+    "Hello " + person + "! How are you today?";
+}
+  }
+nameit();
+    </script>
+  </body>
+</html>
