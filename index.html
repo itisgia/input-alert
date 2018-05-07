@@ -25,18 +25,32 @@
       width: 300px;
       display: block;
       text-align: center;
-      margin-top: 100px;
+      margin-top: 80px;
     }
     h1{
       margin-top: 50px;
       text-align: center;
       font-family: 'Yeon Sung', cursive;
     }
-    input{
-      width: 200px;
+    #content{
+      width: 206px;
+      height: 40px;
       display: block;
       text-align: center;
       margin-top: 40px;
+      background-color: #97a9c6;
+      border: 2px solid black;
+      border-radius: 30px;
+    }
+    #subButton{
+      background-color: grey;
+      border:none;
+      color: white;
+      padding: 10px 30px;
+      font-size: 1.5em;
+      display: block;
+      margin-top: 20px;
+
     }
     p{
       display: block;
@@ -44,9 +58,11 @@
       font-size: 2em;
       margin-top: 15px;
     }
-#demo{
+#demo, #answer{
   font-family: 'Gidugu', sans-serif;
 }
+
+
   </style>
   <body id="nameit">
     <div class="box">
@@ -60,27 +76,52 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js">
     </script>
     <script type="text/javascript">
-  //
-  // var insideContent = document.getElementById('content')
-  //  function subButton () {
-  //    console.dir(content);
-  //    console.log ('worked');
-  //  //   if(insideContent.value === 'welllington'){
-  //  //     console.log('congrates');
-  //  //     alert('excellernt');
-  //  //   }else{
-  //  //     console.log('shame');
-  //  //     alert('try again');
-  //  //   }
-  //   }
-  //  subButton();
+
+
+      // $(document).ready(function(){
+      //
+      //     // var stringArray =[];
+      //   $('#subButton').click(function(){
+      //
+      //     var insideContent = document.getElementById('content').value
+      //     var extraP = document.getElementById('answer')
+      //
+      //     console.dir(insideContent);
+      //     if(insideContent=== 'wellington','welly'){
+      //
+      //          alert('Excellent');
+      //          extraP.innerHTML = 'Congratulations! You\'re correct 😎';
+      //
+      //        }else{
+      //          alert('Plese Try again 😸 ');
+      //          extraP.innerHTML = 'Please Try Again!';
+      //
+      //        }
+      //     // stringArray.push(insideContent);
+      //     // console.log(stringArray);
+      //   });//click functuon ends here
+      // });
+      //
+      //
+      //   function namewithWelcomeMessage() {
+      //     var person = prompt("Please enter your name", "");
+      //     if (person != null) {
+      //       document.getElementById("demo").innerHTML =
+      //       "Hello " + person + "! How's your day going?";
+      //     }
+      //   }
+      //   namewithWelcomeMessage();
+
+
   $(document).ready(function(){
+
+    var stringArray =[];
     $('#subButton').click(function(){
-      var insideContent = document.getElementById('content')
+      var insideContent = document.getElementById('content').value
       var extraP = document.getElementById('answer')
       console.log('worked');
       console.dir(insideContent);
-      if(insideContent.value === 'wellington'){
+      if(insideContent === 'wellington','welly'){
            console.log('congrates');
            alert('excellernt');
            extraP.innerHTML = 'YES! You\'re correct';
@@ -89,16 +130,19 @@
            alert('try again');
            extraP.innerHTML = 'Please Try Again!';
          }
+
+         stringArray.push(insideContent);
+            console.log(stringArray);
     });//click functuon ends here
   });
-  function nameit() {
+  function namewithWelcomeMessage() {
     var person = prompt("Please enter your name", "");
 if (person != null) {
     document.getElementById("demo").innerHTML =
     "Hello " + person + "! How are you today?";
 }
   }
-nameit();
+namewithWelcomeMessage();
     </script>
   </body>
 </html>
